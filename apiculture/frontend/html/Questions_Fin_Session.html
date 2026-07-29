@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="fr">
+<head>
+      
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API-Culture</title> 
+  <link href="https://fonts.googleapis.com/css2?family=Kavoon&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Meera+Inimai&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="../img/abeille_mascotte_final.png"> 
+  <script src="../js/MenuBurger.js" defer></script>
+  <script src="../js/stats.js" defer></script>
+  <script src="../js/question.js" defer></script>
+
+</head>
+<body class="background"> 
+
+    <header class="header">
+
+        <div class="retour">
+        </div>
+
+        <div class="image-box">
+            <a href="../index.html" >
+                <img src ="../img/Accueil/logo_provisoire.png"  alt="Logo API Culture">
+            </a>
+        </div>
+
+        <div class="menu-burger image-box" onclick="openMenuBurger()">
+      <img src ="../img/Accueil/menu_burger.png"  alt="Menu Burger">
+    </div>
+    
+    <nav class="nav">
+      
+      <ul class="nav_menu">
+        <li class="menu_nav_link">
+          <div class="croix image-box" onclick="closeMenuBurger()" >
+            <img src ="../img/Menu_Burger/charm_cross(1).png"  alt="fermer menu" >
+          </div>
+        </li>
+
+        <li class="menu_nav_link image-box">
+          <a href="A_propos.html">
+            <img src ="../img/Menu_Burger/information.png"  alt="A propos bouton">
+            <span>A propos</span>
+          </a>
+        </li>
+        <li class="menu_nav_link image-box">
+          <a href="../index.html">
+            <img src ="../img/Menu_Burger/beehive.png"  alt="Accueil bouton">
+            <span>Accueil</span>
+          </a>
+        </li>
+
+        <li class="menu_nav_link image-box">
+          <a href="Themes.html">
+            <img src ="../img/Menu_Burger/choix_theme.png"  alt="Thèmes bouton">
+            <span>Thèmes</span>
+            </a>
+        </li>
+
+        <li class="menu_nav_link image-box">
+          <a href="Stats.html">
+            <img src ="../img/Menu_Burger/stats.png" alt="stats boutton">
+            <span>Statistique</span>
+          </a>
+        </li>
+
+        <li class="menu_nav_link image-box">
+          <a href="Connexion.html">
+            <img src ="../img/Menu_Burger/connexion_logo.png"  alt="Connexion bouton">
+            <span>Connexion</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+
+
+    <div class="boite_jaune">
+      <img src ="../img/Questions_Fin_Session/Rectangle 10.png"  alt="texte fin session">
+      <p class="texte_fin_session"></p>
+    </div>
+
+    <img  class="img_abeilles_themes_v_f" alt=" image d'abeille en fonction du thème" style="transform: translate(-50px, 20px);">
+
+    <div class="boutton_revenir_aux_thèmes image-box-boutton" onclick="ajout_plus_un_nbr_sessions_complete();calcul_meilleur_score(); calcul_score_minimum(); ajout_bonne_reponse_au_score_moyen()">
+      <a href="Themes.html" >
+        <img src ="../img/Questions_Fin_Session/boutton_revenir_aux_thèmes.png"  alt="boutton_revenir_aux_thèmes">
+      </a>
+    </div>
+    
+    <script>
+      let textefinsession = document.querySelector('p.texte_fin_session');
+      if (textefinsession){
+        let score_session = parseInt(localStorage.getItem('score_session'), 10)
+        let texteAfficher =undefined;
+
+        // entre 0 et 3
+        if(score_session>=0 && score_session <=3){
+          texteAfficher = 'La fabrication du miel demande de la patience.\nLes prochaines fleurs seront les bonnes !\nDéploie tes ailes et repart explorer le champs des connaissances '
+        }
+        //entre 4 et 7
+        else if(score_session>=4 && score_session <=7){
+          texteAfficher = "Continue de butiner avec cette belle énergie !\nLe nectar se transforme doucement en miel, plus qu'un petit coup d'ailes et tu seras au sommet de la ruche"
+        }
+        //entre 8 et 10
+        else if(score_session>=8 && score_session <=10){
+          texteAfficher = "Reine de la ruche !\nTon travail assidu et ta précision portent leurs fruits.\nC'est une récolte exceptionnelle, rempli de gelée royale"
+        }
+        //plus que 10
+        else if(score_session > 10){
+          texteAfficher= "Petit filou !\nTu as triché !!\nPS: Bravo à toi tu as trouvé le glitch ;) "
+        }
+
+        textefinsession.textContent = texteAfficher + '\nTon score : ' +score_session
+      }
+
+      document.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter' || event.key === 'ArrowRight') {
+          window.location.href = "Themes.html";
+          ajout_plus_un_nbr_sessions_complete()
+          calcul_meilleur_score()
+          calcul_score_minimum()
+          ajout_bonne_reponse_au_score_moyen()
+        }
+      });
+
+    </script>
+
+</body>

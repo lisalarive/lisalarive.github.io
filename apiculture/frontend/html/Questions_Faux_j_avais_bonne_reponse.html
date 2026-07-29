@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="fr">
+<head>
+      
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API-Culture</title> 
+  <link href="https://fonts.googleapis.com/css2?family=Kavoon&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Meera+Inimai&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="../img/abeille_mascotte_final.png"> 
+  <script src="../js/MenuBurger.js" defer></script>
+  <script src="../js/question.js" defer></script>
+  <script src="../js/ajout_num_question.js" defer> </script>
+  <script src="../js/stats.js" defer></script>
+  
+</head>
+<body class="background"> 
+
+  <header class="header">
+
+    <div class="retour">
+    </div>
+
+    <div class="image-box">
+      <a href="../index.html" >
+        <img src ="../img/Accueil/logo_provisoire.png"  alt="Logo API Culture">
+      </a>
+    </div>
+
+    <div class="menu-burger image-box" onclick="openMenuBurger()">
+      <img src ="../img/Accueil/menu_burger.png"  alt="Menu Burger">
+    </div>
+    
+    <nav class="nav">
+      
+      <ul class="nav_menu">
+        <li class="menu_nav_link">
+          <div class="croix image-box" onclick="closeMenuBurger()" >
+            <img src ="../img/Menu_Burger/charm_cross(1).png"  alt="fermer menu" >
+          </div>
+        </li>
+
+        <li class="menu_nav_link image-box">
+          <a href="A_propos.html">
+            <img src ="../img/Menu_Burger/information.png"  alt="A propos bouton">
+            <span>A propos</span>
+          </a>
+        </li>
+        <li class="menu_nav_link image-box">
+          <a href="../index.html">
+            <img src ="../img/Menu_Burger/beehive.png"  alt="Accueil bouton">
+            <span>Accueil</span>
+          </a>
+        </li>
+
+        <li class="menu_nav_link image-box">
+          <a href="Themes.html">
+            <img src ="../img/Menu_Burger/choix_theme.png"  alt="Thèmes bouton">
+            <span>Thèmes</span>
+            </a>
+        </li>
+
+        <li class="menu_nav_link image-box">
+          <a href="Stats.html">
+            <img src ="../img/Menu_Burger/stats.png" alt="stats boutton">
+            <span>Statistique</span>
+          </a>
+        </li>
+
+        <li class="menu_nav_link image-box">
+          <a href="Connexion.html">
+            <img src ="../img/Menu_Burger/connexion_logo.png"  alt="Connexion bouton">
+            <span>Connexion</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  
+    <div class="ligne_info_question">
+        <h2 class="titre_questions">Question n°</h2>
+    </div>
+    <main class="page_texte_scroll_faux">
+      <div class="conteneur_a_propos taille_texte_j_avais_br">
+        <p>
+          <span class="titre_kavoon_faux_j_avais_bonne_reponse">Notre correcteur automatique est parfois un peu trop strict ! </span> 
+          <br><br>
+          SI vous estimez que votre proposition est valide ou similaire à la réponse donnée, vous avez la possibilité de vous accorder ce point manuellement.
+          <br><br>
+          Nos abeilles vous font confiance pour jouer le jeu avec honnêteté et ne pas abuser de ce petit coup de pouce. 🐝
+        </p>
+      </div>
+    </main>
+    <div class="bouton_plus_un image-box-boutton" onclick="ajout_un_point()">
+      <img src ="../img/Questions_Faux/bouton_plus_un.png"  alt="bouton_plus_un">
+    </div>
+    <p class="affichage_texte_plus_un">
+    </p>
+    
+    <div class="bouton_valider_faux image-box-boutton" onclick="ajout_num_question()">
+      <img src ="../img/Questions/bouton valider.png"  alt="bouton valider">
+    </div>
+
+    <script>
+
+      function ajout_un_point(){
+        score_session= localStorage.getItem('score_session')
+        console.log("score de la session : " + localStorage.getItem('score_session'));
+        score_session++;
+        localStorage.setItem('score_session',score_session);
+        console.log("score de la session après ajout +1: " + localStorage.getItem('score_session'));
+
+        document.querySelector('p.affichage_texte_plus_un').textContent ='Vous avez ajouté 1 point à votre score'
+
+        //on désactive le bouton pour pas que la personne ne s'ajoute pas plus de 1 point
+        const bouton_plus = document.querySelector('.bouton_plus_un')
+        if(bouton_plus){
+          bouton_plus.style.pointerEvents = 'none'
+        }
+
+        ajout_plus_un_nbr_bonne_reponses()
+      }
+
+      document.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter' || event.key === 'ArrowRight') {
+          ajout_num_question();
+        }
+      });
+
+      document.addEventListener('keydown', function(event) {
+        if (event.key === 'ArrowUp') {
+          ajout_un_point();
+        }
+      });
+
+    </script>
+
+</body>

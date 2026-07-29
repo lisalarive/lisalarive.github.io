@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="fr">
+<head>
+      
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API-Culture</title> 
+  <link href="https://fonts.googleapis.com/css2?family=Kavoon&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Meera+Inimai&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=5">
+  <link rel="icon" href="img/abeille_mascotte_final.png"> 
+  <script src="js/MenuBurger.js" defer></script>
+  <script src="js/stats.js" defer></script>
+</head>
+<body class="background">
+
+  <header class="header">
+
+    <div class="retour">
+    </div>
+
+    <div class="image-box">
+        <a href="index.html" >
+          <img src ="img/Accueil/logo_provisoire.png"  alt="Logo API Culture">
+        </a>
+      </div>
+
+
+    <div class="menu-burger image-box" onclick="openMenuBurger()">
+      <img src ="img/Accueil/menu_burger.png"  alt="Menu Burger">
+    </div>
+    
+    <nav class="nav">
+      
+      <ul class="nav_menu">
+        <li class="menu_nav_link">
+          <div class="croix image-box" onclick="closeMenuBurger()" >
+            <img src ="img/Menu_Burger/charm_cross(1).png"  alt="fermer menu" >
+          </div>
+        </li>
+
+        <li class="menu_nav_link image-box">
+          <a href="html/A_propos.html">
+            <img src ="img/Menu_Burger/information.png"  alt="A propos bouton">
+            <span>A propos</span>
+          </a>
+        </li>
+        <li class="menu_nav_link image-box">
+          <a href="index.html">
+            <img src ="img/Menu_Burger/beehive.png"  alt="Accueil bouton">
+            <span>Accueil</span>
+          </a>
+        </li>
+
+        <li class="menu_nav_link image-box">
+          <a href="html/Themes.html">
+            <img src ="img/Menu_Burger/choix_theme.png"  alt="Thèmes bouton">
+            <span>Thèmes</span>
+            </a>
+        </li>
+
+        <li class="menu_nav_link image-box">
+          <a href="html/Stats.html">
+            <img src ="img/Menu_Burger/stats.png" alt="stats boutton">
+            <span>Statistique</span>
+          </a>
+        </li>
+
+        <li class="menu_nav_link image-box">
+          <a href="html/Connexion.html">
+            <img src ="img/Menu_Burger/connexion_logo.png"  alt="Connexion bouton">
+            <span>Connexion</span>
+          </a>
+        </li>       
+      </ul>
+    </nav>
+  </header>
+
+  <div class="fleur_orange_haut_droit">
+    <img src ="img/Accueil/fleur_orange.png"  alt="fleur_orange">
+  </div>
+  <div class="alveole_haut_gauche">
+    <img src ="img/Accueil/avleole_haut_gauche.svg"  alt="alveole_haut_gauche">
+  </div>
+
+  <div class="abeille_marron">
+    <img src ="img/Accueil/abeille_marron.png"  alt="abeille_marron">
+  </div>
+
+  <div class="design_accueil">
+    <img src ="img/Accueil/logo_design.png"  alt="Logo design">
+  </div>
+  
+  <div class="fleur_orange_bas_gauche">
+    <img src ="img/Accueil/fleur_orange.png"  alt="fleur_orange">
+  </div>
+  <div class="alveole_bas_droit">
+    <img src ="img/Accueil/alveole_bas_droit.svg"  alt="alveole_bas_droit">
+  </div>
+
+
+  <div class="boutton_accueil_comencer image-box-boutton">
+    <a href="html/Themes.html">
+        <img src ="img/Accueil/boutton.png"  alt="Boutton Commancer à jouer">     
+      </a>
+  </div>
+
+  <div class="abeille_jaune">
+    <img src ="img/Accueil/abeille_jaune.png"  alt="abeille_jaune">
+  </div>
+
+  <script>
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Enter' || event.key === 'ArrowRight') {
+        window.location.href = "html/Themes.html";
+      }
+    });
+
+  </script>
+
+</body>
+
+
+
+
+
+
+
+
+
+

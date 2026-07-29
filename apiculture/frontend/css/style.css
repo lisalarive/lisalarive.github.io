@@ -1,0 +1,1093 @@
+* {
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0;
+}
+
+.background, .body_scroll{
+  width: 100%;
+  height: 100vh;
+  background: #FCF9F2;
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+/*header*/
+.header{
+  display: flex;
+  align-items: center;
+  padding: 20px 5%;
+  background-color: #AD7D5A;
+  position: sticky;
+  top:0;
+  z-index: 500;
+}
+.header a{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.header a img {
+  max-width: 500px; 
+  width: 100%;
+  height: auto;
+  transform: translateY(10px);
+}
+
+.nav{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  max-width: 80vw;
+  height: 100vh;
+  background-color: #AD7D5A;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+  overflow: auto;
+}
+
+.nav.open{
+  transform: translateX(0);
+}
+
+.nav_menu{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.nav_menu .menu_nav_link:first-child{
+  padding: 20px 5%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.croix img {
+  max-width: 50px;
+  height: auto;
+  cursor: pointer;
+}
+
+.nav_menu .menu_nav_link:not(:first-child){
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav_menu .menu_nav_link a{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  gap: 15px;
+}
+
+.nav_menu .menu_nav_link a img {
+  width: auto;
+  height: 60px;
+}
+
+.nav_menu .menu_nav_link span {
+  color: #FDECDA; 
+  font-family: 'Kavoon';
+  font-size: 24px;
+}
+
+.retour {
+  flex: 1;
+
+}
+.retour a {
+  display: flex;
+  justify-content: flex-start;
+}
+.header .retour a img {
+  max-width: 45px; 
+  min-width: 0px; 
+  width: 100%;
+  transform: translateY(0px);
+  height: auto;
+}
+
+.menu-burger{
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+.menu-burger img{
+  max-width: 70px;
+  width: 100px;
+  height: auto;
+  cursor :pointer;
+}
+
+.image-box img {
+  transition: transform 0.3s ease-in-out; 
+}
+.image-box:hover img{
+  transform: scale(1.1);
+}
+
+.image-box a img, .image-box a span {
+  transition: transform 0.3s ease-in-out; 
+}
+.image-box:hover a img, .image-box:hover a span{
+  transform: scale(1.1);
+}
+
+.image-box-boutton img{
+  transition: transform 0.3s ease-in-out; 
+}
+.image-box-boutton img:hover{
+  transform: scale(1.1);
+}
+
+
+
+/*bouton*/
+.boutton_accueil_comencer{
+  max-width: 300px;
+  margin: 50px auto;
+  
+}
+.boutton_accueil_comencer img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+/*design accueil */
+
+.design_accueil{
+  display: flex;
+  justify-content: center;
+  margin-top: 7%;
+}
+.design_accueil img{
+  max-width: 800px;
+  width: 90%;
+  height: auto;
+}
+
+.alveole_haut_gauche {
+  position: absolute;
+  top: 12%; 
+  left: 3%; 
+}
+.alveole_haut_gauche img {
+  width: 10%; 
+  min-width: 100px; 
+  max-width: 100px; 
+  height: auto;
+}
+
+.alveole_haut_gauche {
+  position: absolute;
+  top: 17%;
+  left: 2%;
+  width: 12%; 
+  min-width: 80px; 
+  max-width: 180px; 
+}
+.avleole_haut_gauche img {
+  width: 100%;
+  height: auto;
+  display: block; 
+}
+
+.fleur_orange_haut_droit {
+  position: absolute;
+  top: 17%;
+  right: 2%;
+  width: 5%; 
+  min-width: 60px;
+  max-width: 100px;
+}
+.fleur_orange_haut_droit img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.alveole_bas_droit{
+  position: absolute;
+  bottom: 5%;
+  right: 2%;
+  width: 12%; 
+  min-width: 80px; 
+  max-width: 180px; 
+}
+.alveole_bas_droit img{
+  width: 100%;
+  height: auto;
+  display: block; 
+}
+
+.fleur_orange_bas_gauche {
+  position: absolute;
+  bottom: 5%;
+  left: 2%;
+  width: 5%; 
+  min-width: 60px;
+  max-width: 100px;
+}
+.fleur_orange_bas_gauche img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.abeille_marron {
+  position: absolute;
+  top: 25%;
+  right: 0%;
+  width: 30%; 
+  min-width: 50px;
+  max-width: 300px;
+}
+.abeille_marron img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.abeille_jaune {
+  position: absolute;
+  bottom: 25%;
+  left: 0%;
+  width: 30%; 
+  min-width: 50px;
+  max-width: 300px;
+}
+.abeille_jaune img{
+  transform: scaleX(-1);
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/*page Themes */
+.grille_theme {
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 30px;  
+  max-width: 900px;
+  margin: 0 auto; 
+  padding: 5px; 
+}
+.grille_theme img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+.overlay{
+  position: absolute;
+  top: 3px;
+  left: 2px;
+  width: 98%;
+  height: 93%;
+  background-color: rgba(62, 42, 30, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out; 
+
+}
+.image-text{
+  color: #FDECDA;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  transition: transform 0.3s ease-in-out; 
+  font-family: 'Meera Inimai';
+}
+
+#bouttonScienceIng, #bouttonMusique,
+#bouttonCinema, #bouttonHistLitt,
+#bouttonNatureGeo, #bouttonInternet{
+  position: relative;
+}
+#bouttonScienceIng:hover .overlay,
+#bouttonMusique:hover .overlay,
+#bouttonCinema:hover .overlay,
+#bouttonHistLitt:hover .overlay,
+#bouttonNatureGeo:hover .overlay,
+#bouttonInternet:hover .overlay
+{
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.titre_theme{
+  color: #3E2A1E;
+  font-size: 50px;
+  font-family: 'Kavoon';
+  text-align: center; 
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+/*Pages questions */
+.ligne_info_question {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  margin-top: 2%;
+  padding: 10px 5%; 
+  width: 100%; 
+}
+.titre_questions{
+  color: #3E2A1E;
+  font-size: 30px;
+  font-family: 'Kavoon';
+}
+.titre_difficulte{
+  color: #3E2A1E;
+  font-size: 30px;
+  font-family: 'Kavoon';
+}
+
+.input_reponse {
+  width: 100%;
+  max-width: 800px;
+  padding: 20px 20px;
+  display: flex;
+  background-color: #FAD265;
+  border: 4px solid #ECAB0F;
+  border-radius: 30px;
+  font-family: 'Meera Inimai';
+  font-size: 24px;
+  margin-top: 5%;
+  margin-left:10%;
+  color: #3E2A1E;
+  text-align: center;
+  outline: none;
+}
+.input_reponse::placeholder {
+  color: rgba(62, 42, 30, 0.6);
+}
+
+.question_posee{
+  display: flex;
+  margin-top: 5%;
+  text-align: center;
+  margin-left:5%;
+  margin-right: 28%;
+  color: #3E2A1E; 
+  font-family: 'Meera Inimai';
+  font-size: 30px;
+}
+
+.img_abeilles_themes{
+  margin-top: -25%;
+  max-width: 500px;
+  margin-left: 69%;
+
+}
+
+.bouton_valider{
+  display: flex;
+  justify-content: right;
+  margin-top: 2%;
+  margin-right: 5%;
+}
+
+/*page Questions_vrai /faux */
+.mauvaise_reponse, .texte_fin_session, .titre_page_wiki{
+  white-space: pre-line;
+}
+.bonne_reponse{
+  display: flex;
+  margin-top: 5%;
+  margin-left:8%;
+}
+.bonne_reponse img, .boite_rouge img{
+  max-width: 700px; 
+  width: 100%;
+  height: auto;
+}
+
+.boite_rouge{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%; 
+  margin-left: 20%;
+  margin-top: 3%;
+  max-width: 600px; 
+  width: 90%;
+}
+
+.mauvaise_reponse{
+  position: absolute;
+  font-family: 'Meera Inimai';
+  top: 50%; 
+  transform: translateY(-50%);
+  text-align: center;
+  color: #FCF9F2; 
+  padding: 20px; 
+  font-size: 25px;
+  width: 85%; 
+  box-sizing: border-box; 
+  overflow-wrap: break-word;
+}
+
+.titre_page_wiki{
+  margin-left: 6%;
+  font-family: 'Meera Inimai';
+  color: #3E2A1E;
+  font-size: 25px;
+}
+
+.boite_titre_page_wiki{
+  margin-top: 2%;
+  margin-left: 24.5%;
+}
+
+.bouton_suivant{
+  display: flex;
+  justify-content: right;
+  margin-top: 3%;
+  margin-right: 5%;
+}
+.bouton_suivant img, .bouton_valider img{
+  max-width: 200px; 
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+.img_abeilles_themes_v_f{
+  margin-top: -36%;
+  max-width: 500px;
+  margin-left: 69%;
+
+}
+
+.bouton_suivant_faux{
+  display: flex;
+  justify-content: right;
+  margin-top: 3%;
+  margin-right: 5%;
+}
+
+.bouton_suivant_faux img{
+  max-width: 200px; 
+  width: 20%;
+  height: auto;
+  cursor: pointer;
+}
+
+.j_avais_bonne_reponse{
+  display: flex;
+  justify-content: left;
+  margin-bottom: 0%;
+  margin-left: 5%;
+}
+ .j_avais_bonne_reponse img{
+  max-width: 400px; 
+  width: 100%;
+  height: auto;
+}
+
+.taille_texte_j_avais_br{
+  font-size: 20px;
+}
+
+/* page question faux j'avais la bonne réponse */
+.page_texte_scroll_faux{
+  display: flex;
+  justify-content: center;
+  padding: 5% 5%; 
+}
+.bouton_valider_faux{
+  display: flex;
+  justify-content: right;
+  margin-top: 0%;
+  margin-right: 5%;
+}
+.bouton_valider_faux img{
+  max-width: 200px; 
+  cursor: pointer;
+
+}
+
+.bouton_plus_un{
+  display: flex;
+  justify-content: left;
+  margin-top: -1%;
+  margin-left: 5%;
+}
+.bouton_plus_un img{
+  max-width: 200px; 
+  cursor: pointer;
+
+}
+
+.affichage_texte_plus_un{
+  margin-top: 20px;
+  margin-left: 5%;
+  min-height: 35px;
+  font-size: 20px;
+  font-family: 'Kavoon';
+
+}
+
+/*page Fin session */
+.boite_jaune{
+  position: relative;
+  display: flex;
+  margin-top: 8%;
+  margin-left:8%;
+  justify-content: center;
+  max-width: 700px; 
+  width: 90%;
+}
+.boite_jaune img{
+  width: 100%;
+  height: auto;
+}
+
+.boutton_revenir_aux_thèmes{
+  display: flex;
+  justify-content: right;
+  margin-top: 7%;
+  margin-right: 5%;
+}
+.boutton_revenir_aux_thèmes img{
+  max-width: 300px; 
+  width: 100%;
+  height: auto;
+}
+
+
+.texte_fin_session{
+  position: absolute;
+  top: 50%; 
+  transform: translateY(-50%);
+  font-family: 'Meera Inimai';
+  text-align: center;
+  color: #3E2A1E; 
+  padding: 20px; 
+  font-size: 30px;
+  width: 85%; 
+  box-sizing: border-box; 
+  overflow-wrap: break-word;
+}
+
+/*Page Information */
+
+.page_texte_scroll{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  overflow-y: auto;
+  padding: 5% 5%; 
+  overflow-x: hidden;
+}
+.titre_kavoon, .titre_kavoon_faux_j_avais_bonne_reponse{
+  font-family: 'Kavoon';
+  font-size: 24px;
+}
+
+.conteneur_a_propos{
+  color: #3E2A1E;
+  font-family: 'Meera Inimai';
+  width: 100%;
+  line-height: 1.6;
+}
+
+.conteneur_a_propos p {
+  margin-bottom: 15px;
+}
+
+.conteneur_a_propos ul {
+  margin-left: 20px; 
+  margin-bottom: 15px; 
+  margin-top: 15px;
+}
+
+.slogan{
+  display: flex;
+  justify-content: center;
+  margin-top: 3%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.slogan img {
+  max-width: 500px; 
+  width: 100%;
+  height: auto;
+}
+
+/*page Connexion */
+.texte_connexion{
+  font-size: 20px;
+}
+
+.abeille_connexion {
+  display: flex;
+  justify-content: center;
+  margin-top: 2%;
+}
+
+/*Page stats.html */
+
+.titre_tableau_score{
+  text-align: center;
+  margin-top: 2%;
+  margin-bottom: 1.5%;
+  font-family: 'Kavoon';
+  color: #3E2A1E; 
+  font-size: 22px;
+}
+
+.grille_score{
+  display: grid; 
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 30px;  
+  max-width: 1200px;
+  margin: 0 auto; 
+  padding: 10px; 
+}
+
+.rectangle_beige{
+  background-color: #FCEBD9; 
+  border: 2px solid #ECAB0F; 
+  border-radius: 15px; 
+  height: 150px;
+  display: flex;
+  align-items: center; 
+  padding: 0 20px 20px 20px;
+}
+.rectangle_beige img{
+  margin-right: 15px;
+  max-width: 50px;
+}
+.rectangle_beige span{
+  color: #3E2A1E;
+  font-family: 'Meera Inimai';
+  font-size: 25px;
+  text-align: center;
+}
+
+.rectangle_marron{
+  background-color: #AD7D5A;
+  border: 2px solid #3E2A1E;
+  border-radius: 15px; 
+  height: 150px;
+  display: flex;
+  align-items: center; 
+  padding: 0 20px 20px 20px;
+}
+.rectangle_marron img{
+  margin-right: 15px;
+  max-width: 50px;
+}
+.rectangle_marron span{
+  color: #3E2A1E;
+  font-family: 'Meera Inimai';
+  font-size: 25px;
+  text-align: center;
+}
+
+.groupe_texte {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  flex: 1; 
+  gap: 5px;
+}
+.groupe_texte p {
+  font-family: 'Kavoon';
+  font-size: 30px;
+  color: #3E2A1E;
+  margin: 0; 
+}
+
+.page_stats {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0% 5%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Dès que l'écran est plus petit que 700px */
+@media (max-width: 700px) {
+
+  .alveole_haut_gauche,
+  .fleur_orange_haut_droit,
+  .alveole_bas_droit, 
+  .fleur_orange_bas_gauche,
+  .img_abeilles_themes,
+  .img_abeilles_themes_v_f{
+    display: none;
+  } 
+
+  .header a {
+    flex: 3;
+  }
+
+  .header a img {
+    width: 100%;
+    min-width: 220px; 
+    max-width: 280px;
+    height: auto;
+  }
+
+  .header a img {
+    max-width: 500px; 
+    width: 100%;
+    height: auto;
+    transform: translateY(3px);
+
+  }
+
+  .abeille_jaune {
+    position: absolute;
+    bottom: 42%;
+    left: 0%;
+    width: 30%; 
+    min-width: 50px;
+    max-width: 300px;
+  }
+  .abeille_marron {
+    position: absolute;
+    top: 20%;
+    right: 0%;
+    width: 30%; 
+    min-width: 50px;
+    max-width: 300px;
+  }
+
+  .boutton_accueil_comencer{
+    max-width: 300px;
+    margin: 50px auto;
+    margin-top: 30%;
+  }
+
+  .design_accueil{
+    display: flex;
+    margin-top: 35%;
+  }
+
+  /*page Theme*/
+  .grille_theme {
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 15px; 
+    max-width: 500px;
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+
+
+  .titre_theme {
+    font-size: 35px; 
+  }
+
+  /*pages Questions */
+
+  .input_reponse {
+    width: 90%;
+    max-width: 400px;
+    padding: 20px 10px;
+    display: flex;
+    background-color: #FAD265;
+    border: 4px solid #ECAB0F;
+    border-radius: 30px;
+    font-family: 'Meera Inimai';
+    font-size: 24px;
+    margin: 15% auto 0 auto;
+    outline: none;
+    box-sizing: border-box;
+  }
+
+  .question_posee{
+    margin-top: 8%;
+    margin-left:5%;
+    margin-right: 5%;
+    color: #3E2A1E; 
+    font-size: 25px;
+  }
+
+  .bouton_suivant{
+    margin-top: 3%;
+    margin-right:10%;
+  }
+  
+  .bouton_valider img {
+    
+    margin-top: 20%;
+    max-width: 150px; 
+    margin-right: 5%;
+    margin-bottom: 20px;
+  }
+
+  .bouton_valider_faux img{
+    display: flex;
+    justify-content: right;
+    margin-top: 15%;
+    margin-right: 5%;
+    max-width: 150px; 
+    margin-right: 20px;
+    cursor: pointer;
+  }
+
+  .bouton_valider_faux{
+    display: flex;
+    justify-content: right;
+    margin-top: 15%;
+    margin-right: 5%;
+  }
+
+
+  .bouton_suivant img{
+    margin-top: 40%;
+    max-width: 150px; 
+  }
+   .bouton_suivant_faux img{
+    margin-top: 20%;
+    max-width: 150px; 
+  }
+  
+  .bonne_reponse{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20%;
+    margin-left: 0;
+    margin-left: 5%;  
+    margin-right: 5%; 
+  }
+
+  .boite_rouge{
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15%;
+  }
+  .bonne_reponse img {
+    max-width: 400px; 
+
+  }
+  .boite_rouge img{
+    max-width: 400px; 
+  }
+
+  .mauvaise_reponse{
+    position: absolute;
+    font-family: 'Meera Inimai';
+    text-align: center;
+    color: #FCF9F2; 
+    padding: 20px; 
+    font-size: 23px;
+    width: 85%; 
+    box-sizing: border-box; 
+    overflow-wrap: break-word;
+  }
+
+  .ligne_info_question{
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    margin-top: 5%;
+    padding: 0px 11%; 
+    width: 100%; 
+  }
+  .titre_questions, .titre_difficulte, .titre_page_wiki {
+    font-size:18px; 
+  }
+
+  .titre_page_wiki{
+    font-family: 'Meera Inimai';
+    color: #3E2A1E;
+
+  }
+
+  .boite_titre_page_wiki{
+    margin-top: 5%;
+    margin-left: 17.5%;
+  }
+
+    /* page j'avais la bonne réponse */
+  .j_avais_bonne_reponse{
+    display: flex;
+    justify-content: left;
+    margin-top: 10%;
+    margin-left: 5%;
+  }
+  .j_avais_bonne_reponse img{
+    max-width: 200px; 
+    width: 100%;
+    height: auto;
+  }
+
+  .bouton_plus_un{
+    display: flex;
+    justify-content: left;
+    margin-top: 10%;
+    margin-left: 5%;
+  }
+  .bouton_plus_un img{
+    max-width: 150px; 
+  }
+
+  .affichage_texte_plus_un{
+    margin-top: 15px;
+    margin-left: 5%;
+    min-height: 25px;
+  }
+
+  .taille_texte_j_avais_br{
+    font-size: 15px;
+    margin-top: 5%;
+  }
+  .titre_kavoon_faux_j_avais_bonne_reponse{
+    font-size: 20px;
+  }
+
+  
+  /* Page Question_Fin_Session */
+  .boite_jaune{
+    display: flex;
+    margin-top: 20%;
+    margin-left:5%;
+    margin-right:5%;
+
+  }
+  .boite_jaune img{
+    max-width: 700px; 
+    width: 100%;
+    height: auto;
+  }
+
+  .texte_fin_session{
+    font-size: 18px;
+  }
+
+  .boutton_revenir_aux_thèmes{
+    display: flex;
+    justify-content: center;
+    margin-top: 40%;
+    margin-right: 0%;
+  }
+  .boutton_revenir_aux_thèmes img{
+    max-width: 250px; 
+    width: 100%;
+    height: auto;
+  }
+
+  .nav{
+    width: 200px;
+  }
+  
+  .nav_menu .menu_nav_link a {
+    gap: 18px; 
+  }
+
+
+
+  .nav_menu .menu_nav_link a img {
+    height: 45;
+    width: auto !important;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  .nav_menu .menu_nav_link span {
+    font-size: 20px; 
+  }
+
+  .menu-burger_marron img {
+    max-width: 35px; 
+  }
+
+  /* page information */
+  .slogan{
+    margin-top: 10%;
+  }
+  .body_scroll{
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  
+
+  /*page Connexion */
+  .texte_connexion{
+    font-size: 17px;
+  }
+
+  .abeille_connexion {
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+  }
+  .abeille_connexion img{
+    max-width: 250px;
+  }
+  
+  /*page score */
+  .grille_score {
+    grid-template-columns: 1fr; 
+    gap: 15px;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .rectangle_marron span{
+    color: #3E2A1E;
+    font-family: 'Meera Inimai';
+    font-size: 20px;
+    text-align: center;
+  }
+  .rectangle_beige span{
+    color: #3E2A1E;
+    font-family: 'Meera Inimai';
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .page_stats, .background{
+    min-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }  
+}
+
