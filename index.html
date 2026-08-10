@@ -22,17 +22,147 @@
   <hr style="width: 10%; margin: 40px auto; border: 1px solid #ddd;">
 
   <!-- Section Projets -->
-  <h2>Projets</h2>
-  
-  <div style="border: 1px solid #ddd; padding: 20px; width: 80%; max-width: 400px; margin: 20px auto; border-radius: 12px; background-color: white; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-    <h3 style="color: #e91e63; margin-top: 0;">Api Culture</h3>
-    <p style="color: #444;">Application web de culture générale.</p>
-    
-    <!-- Le bouton cliquable -->
-    <a href="/apiculture/frontend/" style="display: inline-block; margin-top: 15px; padding: 10px 20px; background-color: #333; color: white; text-decoration: none; border-radius: 8px; font-weight: bold;">
-      Voir le projet
-    </a>
+  <style>
+  /* Styles pour la section projet */
+  .portfolio-project {
+    border: 1px solid #eaeaea;
+    padding: 32px;
+    max-width: 600px;
+    margin: 30px auto;
+    border-radius: 16px;
+    background-color: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .portfolio-project:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.05);
+  }
+
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  .project-title {
+    color: #e91e63;
+    margin: 0;
+    font-size: 1.5rem;
+  }
+
+  .project-grade {
+    background-color: #fce4ec;
+    color: #e91e63;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+  }
+
+  .project-intro {
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 24px;
+  }
+
+  /* Tags pour la stack technique */
+  .tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .tech-tag {
+    background-color: #f5f5f5;
+    color: #444;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  /* Liste des fonctionnalités / détails */
+  .project-highlights {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 28px 0;
+  }
+
+  .project-highlights li {
+    margin-bottom: 12px;
+    color: #444;
+    line-height: 1.5;
+    font-size: 0.95rem;
+    position: relative;
+    padding-left: 20px;
+  }
+
+  .project-highlights li::before {
+    content: "•";
+    color: #e91e63;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+  }
+
+  .highlight-title {
+    font-weight: 600;
+    color: #222;
+  }
+
+  /* Bouton d'action */
+  .btn-view-project {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background-color 0.2s;
+  }
+
+  .btn-view-project:hover {
+    background-color: #e91e63;
+  }
+</style>
+
+<div class="portfolio-project">
+  <div class="project-header">
+    <h3 class="project-title">Api Culture</h3>
+    <span class="project-grade">Note : 18,6/20</span>
   </div>
+  
+  <p class="project-intro">
+    Application web de quiz interactif proposant plus de 27 000 questions générées automatiquement via l'API Gemini à partir de pages Wikipédia, réparties sur 6 thématiques et 3 niveaux de difficulté.
+  </p>
+
+  <div class="tech-stack">
+    <span class="tech-tag">Python & FastAPI</span>
+    <span class="tech-tag">HTML/CSS/JS</span>
+    <span class="tech-tag">SQLite</span>
+    <span class="tech-tag">Gemini API</span>
+    <span class="tech-tag">Docker</span>
+    <span class="tech-tag">GitLab CI/CD</span>
+  </div>
+
+  <ul class="project-highlights">
+    <li><span class="highlight-title">Architecture & Code :</span> Structure découplée backend/frontend. Code systématiquement documenté (docstrings) et sécurisé par des tests unitaires.</li>
+    <li><span class="highlight-title">Algorithme tolérant :</span> Correcteur de réponses intelligent gérant la casse, les accents et les fautes de frappe (distance de Levenshtein).</li>
+    <li><span class="highlight-title">Démarche UX :</span> Conception sur Figma et itérations basées sur des tests utilisateurs pour aboutir au design final responsive.</li>
+    <li><span class="highlight-title">Méthodologie :</span> Développement structuré en appliquant les principes de gestion de projet (Agile, cycle en V).</li>
+  </ul>
+
+  <a href="https://larivelisa.dev/apiculture/frontend/index.html" target="_blank" class="btn-view-project">
+    Voir le projet
+  </a>
+</div>
 
 </body>
 </html>
