@@ -2,24 +2,23 @@
 :root {
   --marine: #1F2F4A;
   --bleu-titres: #125CAB;
+  --bleu-logo: #6183B2;
   --bleu-vif: #429FE3;
-  --bleu-chemisier: #9CB0D5;
   --gris-ardoise: #54637A;
-  --fond: #F6F8FC;
 }
 
 body {
   margin: 0;
-  background-color: var(--fond);
+  background-color: #F3F6FB;
   color: var(--marine);
-  font-family: 'Century Gothic', 'Segoe UI', Tahoma, sans-serif;
+  font-family: 'Poppins', 'Segoe UI', Tahoma, sans-serif;
   line-height: 1.6;
 }
 
 /* Bandeau du haut */
 .bandeau {
   background-color: #ffffff;
-  border-bottom: 3px solid var(--bleu-chemisier);
+  border-bottom: 2px solid var(--bleu-logo);
   padding: 16px 24px;
 }
 
@@ -29,135 +28,100 @@ body {
 }
 
 main {
-  max-width: 640px;
+  max-width: 760px;
   margin: 0 auto;
   padding: 48px 24px 64px;
 }
 
 h1 {
   font-size: 2.2rem;
-  margin: 0 0 4px 0;
+  font-weight: 600;
+  margin: 0;
 }
 
 .etudes {
   color: var(--bleu-titres);
-  font-weight: bold;
-  margin: 0 0 20px 0;
-}
-
-.presentation {
-  color: var(--gris-ardoise);
+  font-weight: 600;
   margin: 0 0 16px 0;
 }
 
+.presentation {
+  margin: 0 0 8px 0;
+}
+
+/* Sur un grand écran, la présentation tient sur une seule ligne */
+@media (min-width: 820px) {
+  .presentation {
+    white-space: nowrap;
+  }
+}
+
 .construction {
-  display: inline-block;
-  border: 1px solid var(--bleu-chemisier);
-  border-radius: 20px;
-  padding: 6px 16px;
+  color: var(--gris-ardoise);
   font-size: 0.9rem;
-  color: var(--gris-ardoise);
-  background-color: #ffffff;
-  margin: 8px 0 0 0;
+  margin: 0;
 }
 
+/* Titre de section */
 h2 {
-  font-size: 1.1rem;
-  color: var(--gris-ardoise);
-  margin: 48px 0 12px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--bleu-logo);
+  border-bottom: 1px solid var(--bleu-logo);
+  padding-bottom: 6px;
+  margin: 56px 0 20px 0;
 }
 
-/* Carte du projet */
-.portfolio-project {
-  border: 1px solid #dfe6f2;
-  padding: 28px;
-  border-radius: 12px;
+/* Projet : une carte avec un en-tête foncé */
+.projet {
   background-color: #ffffff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(31, 47, 74, 0.10);
 }
 
-.project-header {
+.projet-entete {
+  background-color: var(--marine);
+  color: #ffffff;
+  padding: 8px 24px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
   gap: 8px;
-  margin-bottom: 12px;
 }
 
-.project-title {
-  color: var(--bleu-titres);
+.projet h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
   margin: 0;
-  font-size: 1.5rem;
 }
 
-.project-grade {
-  background-color: #e8eef8;
-  color: var(--bleu-titres);
-  padding: 4px 12px;
-  border-radius: 20px;
+.projet .note {
   font-size: 0.85rem;
-  font-weight: bold;
-}
-
-.project-intro {
-  color: var(--gris-ardoise);
-  margin: 0 0 20px 0;
-}
-
-/* Tags pour la stack technique */
-.tech-stack {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 20px;
-}
-
-.tech-tag {
-  background-color: var(--fond);
-  color: var(--marine);
-  padding: 6px 12px;
-  border-radius: 8px;
-  font-size: 0.8rem;
-}
-
-/* Liste des détails */
-.project-highlights {
-  list-style: none;
-  padding: 0;
   margin: 0;
 }
 
-.project-highlights li {
-  margin-bottom: 10px;
-  color: var(--gris-ardoise);
-  font-size: 0.95rem;
-  position: relative;
-  padding-left: 20px;
+.projet-contenu {
+  padding: 20px 24px 24px;
 }
 
-.project-highlights li::before {
-  content: "•";
-  color: var(--bleu-vif);
-  font-weight: bold;
-  position: absolute;
-  left: 0;
+.projet .intro {
+  margin: 0 0 12px 0;
 }
 
-.highlight-title {
-  font-weight: bold;
-  color: var(--marine);
-}
-
-/* Bouton "En savoir plus" qui déplie les détails */
+/* "En savoir plus" qui déplie les détails */
 .en-savoir-plus {
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .en-savoir-plus summary {
   cursor: pointer;
   list-style: none;
   color: var(--bleu-titres);
-  font-weight: bold;
+  font-weight: 600;
   font-size: 0.95rem;
 }
 
@@ -169,29 +133,39 @@ h2 {
   content: "▾";
   display: inline-block;
   margin-left: 6px;
-  transition: transform 0.2s;
 }
 
 .en-savoir-plus[open] summary::after {
   transform: rotate(180deg);
 }
 
-.en-savoir-plus[open] summary {
-  margin-bottom: 16px;
+.en-savoir-plus .technos {
+  color: var(--gris-ardoise);
+  font-size: 0.9rem;
+  margin: 12px 0;
 }
 
-/* Bouton */
-.btn-view-project {
-  display: inline-block;
-  padding: 12px 24px;
-  background-color: var(--marine);
-  color: #ffffff;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
+.en-savoir-plus ul {
+  margin: 0;
+  padding-left: 20px;
   font-size: 0.95rem;
 }
 
-.btn-view-project:hover {
+.en-savoir-plus li {
+  margin-bottom: 8px;
+}
+
+/* Bouton vers le projet */
+.voir-projet {
+  display: inline-block;
   background-color: var(--bleu-titres);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 6px;
+}
+
+.voir-projet:hover {
+  background-color: var(--marine);
 }
