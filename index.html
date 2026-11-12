@@ -2,51 +2,113 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Lisa Larive</title>
-  
+
   <!-- Balise de validation Google -->
   <meta name="google-site-verification" content="cwnigv24712oicM2fCa02X595oEKiSxAobTyKqOkRt8" />
-  
+
   <!-- Icône dans l'onglet du navigateur -->
-  <link rel="icon" type="image/png" href="assets/images/logo_LL_favicon.png">
-  
+  <!-- Lettres foncées en mode jour, lettres claires en mode nuit -->
+  <link rel="icon" type="image/png" href="assets/images/logo_ia_favicon.png" media="(prefers-color-scheme: light)">
+  <link rel="icon" type="image/png" href="assets/images/logo_ia_favicon_nuit.png" media="(prefers-color-scheme: dark)">
+
   <style>
-    /* Styles pour la section projet */
-    .portfolio-project {
-      border: 1px solid #eaeaea;
-      padding: 32px;
-      max-width: 600px;
-      margin: 30px auto;
-      border-radius: 16px;
-      background-color: #ffffff;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      transition: transform 0.2s ease-in-out;
-      /* CORRECTION : On force le texte à gauche pour contrer le "center" du body */
-      text-align: left; 
+    /* Ma palette */
+    :root {
+      --marine: #1F2F4A;
+      --bleu-titres: #125CAB;
+      --bleu-vif: #429FE3;
+      --bleu-chemisier: #9CB0D5;
+      --gris-ardoise: #54637A;
+      --fond: #F6F8FC;
     }
 
-    .portfolio-project:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.05);
+    body {
+      margin: 0;
+      background-color: var(--fond);
+      color: var(--marine);
+      font-family: 'Century Gothic', 'Segoe UI', Tahoma, sans-serif;
+      line-height: 1.6;
+    }
+
+    /* Bandeau du haut */
+    .bandeau {
+      background-color: #ffffff;
+      border-bottom: 3px solid var(--bleu-chemisier);
+      padding: 16px 24px;
+    }
+
+    .bandeau img {
+      height: 52px;
+      display: block;
+    }
+
+    main {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 48px 24px 64px;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin: 0 0 4px 0;
+    }
+
+    .etudes {
+      color: var(--bleu-titres);
+      font-weight: bold;
+      margin: 0 0 20px 0;
+    }
+
+    .presentation {
+      color: var(--gris-ardoise);
+      margin: 0 0 16px 0;
+    }
+
+    .construction {
+      display: inline-block;
+      border: 1px solid var(--bleu-chemisier);
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 0.9rem;
+      color: var(--gris-ardoise);
+      background-color: #ffffff;
+      margin: 8px 0 0 0;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      color: var(--gris-ardoise);
+      margin: 48px 0 12px 0;
+    }
+
+    /* Carte du projet */
+    .portfolio-project {
+      border: 1px solid #dfe6f2;
+      padding: 28px;
+      border-radius: 12px;
+      background-color: #ffffff;
     }
 
     .project-header {
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
+      gap: 8px;
       margin-bottom: 12px;
     }
 
     .project-title {
-      color: #e91e63;
+      color: var(--bleu-titres);
       margin: 0;
       font-size: 1.5rem;
     }
 
     .project-grade {
-      background-color: #fce4ec;
-      color: #e91e63;
+      background-color: #e8eef8;
+      color: var(--bleu-titres);
       padding: 4px 12px;
       border-radius: 20px;
       font-size: 0.85rem;
@@ -54,9 +116,8 @@
     }
 
     .project-intro {
-      color: #555;
-      line-height: 1.5;
-      margin-bottom: 24px;
+      color: var(--gris-ardoise);
+      margin: 0 0 20px 0;
     }
 
     /* Tags pour la stack technique */
@@ -64,29 +125,27 @@
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
     .tech-tag {
-      background-color: #f5f5f5;
-      color: #444;
+      background-color: var(--fond);
+      color: var(--marine);
       padding: 6px 12px;
       border-radius: 8px;
       font-size: 0.8rem;
-      font-weight: 500;
     }
 
-    /* Liste des fonctionnalités / détails */
+    /* Liste des détails */
     .project-highlights {
       list-style: none;
       padding: 0;
-      margin: 0 0 28px 0;
+      margin: 0;
     }
 
     .project-highlights li {
-      margin-bottom: 12px;
-      color: #444;
-      line-height: 1.5;
+      margin-bottom: 10px;
+      color: var(--gris-ardoise);
       font-size: 0.95rem;
       position: relative;
       padding-left: 20px;
@@ -94,76 +153,118 @@
 
     .project-highlights li::before {
       content: "•";
-      color: #e91e63;
+      color: var(--bleu-vif);
       font-weight: bold;
       position: absolute;
       left: 0;
     }
 
     .highlight-title {
-      font-weight: 600;
-      color: #222;
+      font-weight: bold;
+      color: var(--marine);
     }
 
-    /* Bouton d'action */
+    /* Bouton "En savoir plus" qui déplie les détails */
+    .en-savoir-plus {
+      margin-bottom: 24px;
+    }
+
+    .en-savoir-plus summary {
+      cursor: pointer;
+      list-style: none;
+      color: var(--bleu-titres);
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+
+    .en-savoir-plus summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .en-savoir-plus summary::after {
+      content: "▾";
+      display: inline-block;
+      margin-left: 6px;
+      transition: transform 0.2s;
+    }
+
+    .en-savoir-plus[open] summary::after {
+      transform: rotate(180deg);
+    }
+
+    .en-savoir-plus[open] summary {
+      margin-bottom: 16px;
+    }
+
+    /* Bouton */
     .btn-view-project {
       display: inline-block;
       padding: 12px 24px;
-      background-color: #333;
-      color: #fff;
+      background-color: var(--marine);
+      color: #ffffff;
       text-decoration: none;
       border-radius: 8px;
-      font-weight: 600;
+      font-weight: bold;
       font-size: 0.95rem;
-      transition: background-color 0.2s;
     }
 
     .btn-view-project:hover {
-      background-color: #e91e63;
+      background-color: var(--bleu-titres);
     }
   </style>
 </head>
-<body style="text-align:center; font-family:sans-serif; margin-top:100px; background-color: #fafafa;">
+<body>
 
-  <!-- Logo animé APNG -->
-  <img src="assets/images/logo_LL_anime_transparent_loop_fluide.apng" alt="Logo LL" width="180">
-  
-  <h1 style="color: #333; font-size: 2.5em; margin-bottom: 5px;">Lisa Larive</h1>
-  <p style="color: #666; font-size: 1.2em;">Site en construction 🚧</p>
+  <!-- Bandeau avec le logo -->
+  <header class="bandeau">
+    <img src="assets/images/logo_lisa_ia.png" alt="Logo Lisa">
+  </header>
 
-  <hr style="width: 10%; margin: 40px auto; border: 1px solid #ddd;">
-
-  <!-- Section Projets -->
-  <div class="portfolio-project">
-    <div class="project-header">
-      <h3 class="project-title">Api Culture</h3>
-      <span class="project-grade">Note : 18,6/20</span>
-    </div>
-    
-    <p class="project-intro">
-      Application web de quiz interactif proposant plus de 27 000 questions générées automatiquement via l'API Gemini à partir de pages Wikipédia, réparties sur 6 thématiques et 3 niveaux de difficulté.
+  <main>
+    <h1>Lisa Larive</h1>
+    <p class="etudes">L3 Informatique à Sorbonne Université</p>
+    <p class="presentation">
+      Après ma licence, je veux me spécialiser en data science et en intelligence artificielle. J'ai envie d'en faire mon métier, en devenant data scientist.
     </p>
+    <p class="construction">Site en construction 🚧</p>
 
-    <div class="tech-stack">
-      <span class="tech-tag">Python & FastAPI</span>
-      <span class="tech-tag">HTML/CSS/JS</span>
-      <span class="tech-tag">SQLite</span>
-      <span class="tech-tag">Gemini API</span>
-      <span class="tech-tag">Docker</span>
-      <span class="tech-tag">GitLab CI/CD</span>
+    <!-- Section Projets -->
+    <h2>Mon projet</h2>
+    <div class="portfolio-project">
+      <div class="project-header">
+        <h3 class="project-title">Api Culture</h3>
+        <span class="project-grade">Note : 18,6/20</span>
+      </div>
+
+      <p class="project-intro">
+        Application web de quiz interactif proposant plus de 27 000 questions générées automatiquement via l'API Gemini à partir de pages Wikipédia, réparties sur 6 thématiques et 3 niveaux de difficulté.
+      </p>
+
+      <details class="en-savoir-plus">
+        <summary>En savoir plus</summary>
+
+      <div class="tech-stack">
+        <span class="tech-tag">Python & FastAPI</span>
+        <span class="tech-tag">HTML/CSS/JS</span>
+        <span class="tech-tag">SQLite</span>
+        <span class="tech-tag">Gemini API</span>
+        <span class="tech-tag">Docker</span>
+        <span class="tech-tag">GitLab CI/CD</span>
+      </div>
+
+      <ul class="project-highlights">
+        <li><span class="highlight-title">Architecture & Code :</span> Structure découplée backend/frontend. Code systématiquement documenté (docstrings) et sécurisé par des tests unitaires.</li>
+        <li><span class="highlight-title">Algorithme tolérant :</span> Correcteur de réponses intelligent gérant la casse, les accents et les fautes de frappe (distance de Levenshtein).</li>
+        <li><span class="highlight-title">Démarche UX :</span> Conception sur Figma et itérations basées sur des tests utilisateurs pour aboutir au design final responsive.</li>
+        <li><span class="highlight-title">Méthodologie :</span> Développement structuré en appliquant les principes de gestion de projet (Agile, cycle en V).</li>
+      </ul>
+      </details>
+
+      <a href="https://larivelisa.dev/apiculture/frontend/index.html" target="_blank" class="btn-view-project">
+        Voir le projet
+      </a>
     </div>
-
-    <ul class="project-highlights">
-      <li><span class="highlight-title">Architecture & Code :</span> Structure découplée backend/frontend. Code systématiquement documenté (docstrings) et sécurisé par des tests unitaires.</li>
-      <li><span class="highlight-title">Algorithme tolérant :</span> Correcteur de réponses intelligent gérant la casse, les accents et les fautes de frappe (distance de Levenshtein).</li>
-      <li><span class="highlight-title">Démarche UX :</span> Conception sur Figma et itérations basées sur des tests utilisateurs pour aboutir au design final responsive.</li>
-      <li><span class="highlight-title">Méthodologie :</span> Développement structuré en appliquant les principes de gestion de projet (Agile, cycle en V).</li>
-    </ul>
-
-    <a href="https://larivelisa.dev/apiculture/frontend/index.html" target="_blank" class="btn-view-project">
-      Voir le projet
-    </a>
-  </div>
+  </main>
 
 </body>
 </html>
